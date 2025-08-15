@@ -28,7 +28,7 @@ class BeanHamburger implements  Hamburger {
 }
 
 abstract class Restaurant {
-    abstract Hamburger createHamburger();
+    protected abstract Hamburger createHamburger();
 
     void orderHamburger() {
         final Hamburger hamburger = this.createHamburger();
@@ -38,21 +38,21 @@ abstract class Restaurant {
 
 class ChickenRestaurant extends Restaurant {
     @Override
-    public Hamburger createHamburger() {
+    protected Hamburger createHamburger() {
         return new ChickenHamburger();
     }
 }
 
 class MeatRestaurant extends Restaurant {
     @Override
-    public Hamburger createHamburger() {
+    protected Hamburger createHamburger() {
         return new MeatHamburger();
     }
 }
 
 class BeanRestaurant extends Restaurant {
     @Override
-    public Hamburger createHamburger () {
+    protected Hamburger createHamburger () {
         return new BeanHamburger();
     }
 }

@@ -21,7 +21,7 @@ class InventoryReport implements Report {
 }
 
 abstract class ReportFactory {
-    abstract Report createReport();
+    protected abstract Report createReport();
 
     void generateReport() {
         final Report report = this.createReport();
@@ -30,13 +30,13 @@ abstract class ReportFactory {
 }
 
 class SalesReportFactory extends ReportFactory {
-    Report createReport() {
+    protected Report createReport() {
         return new SalesReport();
     }
 }
 
 class InventoryReportFactory extends ReportFactory {
-    Report createReport() {
+    protected Report createReport() {
         return new  InventoryReport();
     }
 }
@@ -57,6 +57,7 @@ public class FactoryMethod2Demo {
         }
 
         reportFactory.generateReport();
+        reportFactory.createReport();
     }
 }
 
