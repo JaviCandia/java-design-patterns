@@ -20,6 +20,13 @@ class MeatHamburger implements Hamburger {
     }
 }
 
+class BeanHamburger implements  Hamburger {
+    @Override
+    public void prepare() {
+        System.out.println("Preparing a Bean Hamburger");
+    }
+}
+
 abstract class Restaurant {
     abstract Hamburger createHamburger();
 
@@ -43,17 +50,25 @@ class MeatRestaurant extends Restaurant {
     }
 }
 
+class BeanRestaurant extends Restaurant {
+    @Override
+    public Hamburger createHamburger () {
+        return new BeanHamburger();
+    }
+}
+
 public class FactoryMethodDemo {
     public static void main(String[] args) {
         Restaurant restaurant;
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Choice your hamburger type: chicken/meat/bean");
+        System.out.println("Choice your hamburger type: chicken | meat | bean");
         String burgerType = scanner.nextLine().toLowerCase();
 
         restaurant = switch (burgerType) {
             case "chicken" -> new ChickenRestaurant();
             case "meat" -> new MeatRestaurant();
+            case "bean" -> new BeanRestaurant();
             default -> throw new IllegalArgumentException("Invalid burger type");
         };
 
