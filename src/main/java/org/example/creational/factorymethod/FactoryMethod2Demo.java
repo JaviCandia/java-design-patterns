@@ -1,4 +1,4 @@
-package org.example.creational.factory;
+package org.example.creational.factorymethod;
 
 import java.util.Scanner;
 
@@ -57,7 +57,6 @@ public class FactoryMethod2Demo {
         }
 
         reportFactory.generateReport();
-        reportFactory.createReport();
     }
 }
 

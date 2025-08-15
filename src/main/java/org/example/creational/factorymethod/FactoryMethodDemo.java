@@ -1,4 +1,4 @@
-package org.example.creational.factory;
+package org.example.creational.factorymethod;
 
 import java.util.Scanner;
 
@@ -13,10 +13,10 @@ class ChickenHamburger implements Hamburger {
     }
 }
 
-class MeatHamburger implements Hamburger {
+class BeefHamburger implements Hamburger {
     @Override
     public void prepare() {
-        System.out.println("Preparing a Meat Hamburger");
+        System.out.println("Preparing a Beef Hamburger");
     }
 }
 
@@ -43,10 +43,10 @@ class ChickenRestaurant extends Restaurant {
     }
 }
 
-class MeatRestaurant extends Restaurant {
+class BeefRestaurant extends Restaurant {
     @Override
     protected Hamburger createHamburger() {
-        return new MeatHamburger();
+        return new BeefHamburger();
     }
 }
 
@@ -62,12 +62,12 @@ public class FactoryMethodDemo {
         Restaurant restaurant;
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Choice your hamburger type: chicken | meat | bean");
+        System.out.println("Choice your hamburger type: chicken | beef | bean");
         String burgerType = scanner.nextLine().toLowerCase();
 
         restaurant = switch (burgerType) {
             case "chicken" -> new ChickenRestaurant();
-            case "meat" -> new MeatRestaurant();
+            case "beef" -> new BeefRestaurant();
             case "bean" -> new BeanRestaurant();
             default -> throw new IllegalArgumentException("Invalid burger type");
         };
