@@ -65,7 +65,7 @@ class GasVehicleFactory implements VehicleFactory {
     }
 }
 
-public class AbstractFactory2Demo {
+public class VehiclesAbstractFactory {
     public static void main(String[] args) {
         System.out.println("Creating electric vehicle:");
         createVehicle(new ElectricVehicleFactory());

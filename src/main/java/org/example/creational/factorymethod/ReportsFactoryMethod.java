@@ -42,7 +42,7 @@ class InventoryReportFactory extends ReportFactory {
 }
 
 // 5. Código Cliente para Probar
-public class FactoryMethod2Demo {
+public class ReportsFactoryMethod {
     public static void main(String[] args) {
         ReportFactory reportFactory;
 
