@@ -2,11 +2,6 @@ package org.example.creational.immutableobject;
 
 import java.util.Objects;
 
-/**
- * TODO: Completen el metodo copyWith en la clase Player para que permita crear una copia con cambios en name, score o level.
- * TODO: Usen el código cliente para probar el funcionamiento de copyWith, haciendo cambios en el puntaje, nivel y nombre del jugador.
- */
-
 class Player {
     public final String name;
     public final int score;
