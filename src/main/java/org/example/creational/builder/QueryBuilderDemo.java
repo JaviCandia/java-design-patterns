@@ -4,28 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class QueryBuilderDemo {
-    public static void main(String[] args) {
-        String usersQuery = new QueryBuilder("users")
-                .select("id", "name", "email")
-                .where("age > 18")
-                .where("country = 'Cri'")
-                .orderBy("name", QueryBuilder.SortDirection.ASC)
-                .limit(10)
-                .execute();
-
-        System.out.println("Consulta:\n" + usersQuery);
-
-
-        String cartsQuery = new QueryBuilder("carts")
-                .select("model")
-                .orderBy("speed",  QueryBuilder.SortDirection.ASC)
-                .execute();
-
-        System.out.println("Consulta 2: \n" + cartsQuery);
-    }
-}
-
 final class QueryBuilder {
     private final String table;
     private final List<String> conditions = new ArrayList<>();
@@ -87,5 +65,27 @@ final class QueryBuilder {
     public enum SortDirection {
         ASC,
         DESC
+    }
+}
+
+public class QueryBuilderDemo {
+    public static void main(String[] args) {
+        String usersQuery = new QueryBuilder("users")
+                .select("id", "name", "email")
+                .where("age > 18")
+                .where("country = 'Cri'")
+                .orderBy("name", QueryBuilder.SortDirection.ASC)
+                .limit(10)
+                .execute();
+
+        System.out.println("Consulta:\n" + usersQuery);
+
+
+        String cartsQuery = new QueryBuilder("carts")
+                .select("model")
+                .orderBy("speed", QueryBuilder.SortDirection.ASC)
+                .execute();
+
+        System.out.println("Consulta 2: \n" + cartsQuery);
     }
 }
