@@ -30,7 +30,7 @@ class Player {
     }
 }
 
-public class ImmutablePlayerDemo {
+public class ImmutablePlayer {
     public static void main(String[] args) {
         System.out.println("Initial State:");
         Player player = new Player("Carlos", 0, 1);
