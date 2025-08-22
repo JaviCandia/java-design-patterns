@@ -3,7 +3,7 @@ package org.example.structural.composite;
 import java.util.ArrayList;
 import java.util.List;
 
-// Composite Pattern: common component interface for leaf and composite
+// Common interface for leaf and composite
 interface FileSystemComponent {
     void showDetails(String indent);
 }

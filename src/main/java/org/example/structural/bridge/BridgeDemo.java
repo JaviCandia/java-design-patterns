@@ -1,6 +1,5 @@
 package org.example.structural.bridge;
 
-// Bridge Pattern: Implementation hierarchy (abilities)
 @FunctionalInterface
 interface Ability {
     void use();
@@ -72,7 +71,6 @@ class Mage extends Character {
 
 public class BridgeDemo {
     public static void main(String[] args) {
-        // Use abstraction type so the abstract contract is "used" (IDE-friendly)
         Character warrior = new Warrior(new SwordAttack());
         warrior.performAbility();
 
@@ -80,7 +78,7 @@ public class BridgeDemo {
         warrior.setAbility(new AxeAttack());
         warrior.performAbility();
 
-        Character mage = new Mage(new FireballSpell()); // now MagicSpell is used
+        Character mage = new Mage(new FireballSpell());
         mage.performAbility();
     }
 }
