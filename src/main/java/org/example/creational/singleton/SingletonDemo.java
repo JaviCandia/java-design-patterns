@@ -1,7 +1,9 @@
 package org.example.creational.singleton;
 
+// Singleton Pattern: ensures only one instance of DragonBalls exists in the entire application
 class DragonBalls {
 
+    // Holds the single instance (shared across all calls)
     private static DragonBalls instance;
     private int ballsCollected;
 
@@ -9,6 +11,7 @@ class DragonBalls {
         this.ballsCollected = 0;
     }
 
+    // Singleton access point: creates the instance once and always returns the same object
     public static DragonBalls getInstance() {
         if (instance == null) {
             instance = new DragonBalls();

@@ -11,6 +11,7 @@ class Document {
         this.author = author;
     }
 
+    // Prototype Pattern: copy constructor used to clone an existing Document
     public Document(Document document) {
         this.title = document.title;
         this.content = document.content;

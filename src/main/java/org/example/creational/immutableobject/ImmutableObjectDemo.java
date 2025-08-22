@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 class CodeEditorState {
+    // Immutable: all fields are final and there are no setters
     private final String content;
     private final int cursorPosition;
     private final boolean unsavedChanges;
@@ -14,6 +15,7 @@ class CodeEditorState {
         this.unsavedChanges = unsavedChanges;
     }
 
+    // Immutable update pattern: return a NEW instance rather than mutating the current one
     public CodeEditorState copyWith(String content, Integer cursorPosition, Boolean unsavedChanges) {
         return new CodeEditorState(
                 (content != null) ? content : this.content,
