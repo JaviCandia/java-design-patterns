@@ -40,9 +40,8 @@ final class Folder implements FileSystemComponent {
     public void showDetails(String indent) {
         System.out.println(indent + "> Folder: " + name);
 
-        String nextIndent = indent + "   ";
         for (FileSystemComponent content : contents) {
-            content.showDetails(nextIndent);
+            content.showDetails(indent + "   ");
         }
     }
 }
