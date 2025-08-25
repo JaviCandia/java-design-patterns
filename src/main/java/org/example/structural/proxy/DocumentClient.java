@@ -66,4 +66,3 @@ public class DocumentClient {
         proxy.displayContent(user2);
     }
 }
-
