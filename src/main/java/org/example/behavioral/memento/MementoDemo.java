@@ -1,4 +1,3 @@
-// MementoDemo.java
 package org.example.behavioral.memento;
 
 import java.util.ArrayList;
